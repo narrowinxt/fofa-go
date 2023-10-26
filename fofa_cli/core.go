@@ -6,7 +6,7 @@ import (
 	"errors"
 	"flag"
 	"fmt"
-	"github.com/xiaoyu-0814/fofa-go/fofa"
+	"github.com/narrowinxt/fofa-go/fofa"
 	"io/ioutil"
 	"os"
 	"os/exec"
