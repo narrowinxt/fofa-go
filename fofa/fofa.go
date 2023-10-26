@@ -55,7 +55,7 @@ type SingleData struct {
 }
 
 const (
-	defaultAPIUrl = "https://fofa.so/api/v1/search/all?"
+	defaultAPIUrl = "https://fofa.info/api/v1/search/all?"
 )
 
 // NewFofaClient create a fofa client
@@ -91,7 +91,7 @@ func (ff *Fofa) Get(u string) ([]byte, error) {
 
 // QueryAsJSON make a fofa query and return json data as result
 // echo 'domain="nosec.org"' | base64 - | xargs -I{}
-// curl "https://fofa.so/api/v1/search/all?email=${FOFA_EMAIL}&key=${FOFA_KEY}&qbase64={}"
+// curl "https://fofa.info/api/v1/search/all?email=${FOFA_EMAIL}&key=${FOFA_KEY}&qbase64={}"
 // Default: host title ip domain port country city
 func (ff *Fofa) QueryAsJSON(page uint, size uint, full string, args ...[]byte) ([]byte, error) {
 	var (
@@ -133,7 +133,7 @@ func (ff *Fofa) QueryAsJSON(page uint, size uint, full string, args ...[]byte) (
 // QueryAsObject make a fofa query and
 // return object data as result
 // echo 'domain="nosec.org"' | base64 - | xargs -I{}
-// curl "https://fofa.so/api/v1/search/all?email=${FOFA_EMAIL}&key=${FOFA_KEY}&qbase64={}"
+// curl "https://fofa.info/api/v1/search/all?email=${FOFA_EMAIL}&key=${FOFA_KEY}&qbase64={}"
 func (ff *Fofa) QueryAsObject(page uint, size uint, full string, args ...[]byte) (data Data, err error) {
 
 	var content []byte
@@ -183,7 +183,7 @@ func (ff *Fofa) toData(content []byte) (data Data, err error) {
 // UserInfo get user information
 func (ff *Fofa) UserInfo() (user *User, err error) {
 	user = new(User)
-	queryStr := strings.Join([]string{"https://fofa.so/api/v1/info/my?email=", string(ff.Email), "&key=", string(ff.Key)}, "")
+	queryStr := strings.Join([]string{"https://fofa.info/api/v1/info/my?email=", string(ff.Email), "&key=", string(ff.Key)}, "")
 	content, err := ff.Get(queryStr)
 
 	if err != nil {
