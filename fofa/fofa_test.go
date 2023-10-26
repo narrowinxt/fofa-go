@@ -2,7 +2,7 @@ package fofa_test
 
 import (
 	"github.com/buger/jsonparser"
-	"github.com/xiaoyu-0814/fofa-go/fofa"
+	"github.com/narrowinxt/fofa-go/fofa"
 	"math/rand"
 	"os"
 	"runtime"
