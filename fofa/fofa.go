@@ -96,7 +96,7 @@ func (ff *Fofa) Get(u string) ([]byte, error) {
 func (ff *Fofa) QueryAsJSON(page uint, size uint, full string, args ...[]byte) ([]byte, error) {
 	var (
 		query  = []byte(nil)
-		fields = []byte("domain,host,ip,port,title,country,city")
+		fields = []byte("domain,link,ip,port,title,country,city")
 		q      = []byte(nil)
 	)
 	switch {
